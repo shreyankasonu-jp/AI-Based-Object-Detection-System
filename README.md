@@ -40,5 +40,17 @@ An AI-based object detection system developed using Python, Flask, and YOLOv8. T
 1. Install the required packages:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 
+
+
+<!-- Copy-paste in your Readme.md file -->
+
+<a href="https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=1382812037&limit=30" target="_blank" style="display: block" align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=1382812037&limit=30&image_size=auto&color_scheme=dark" width="655" height="auto">
+    <img alt="Active Contributors of shreyankasonu-jp/AI-Based-Object-Detection-System - Last 28 days" src="https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=1382812037&limit=30&image_size=auto&color_scheme=light" width="655" height="auto">
+  </picture>
+</a>
+
+<!-- Made with [OSS Insight](https://ossinsight.io/) -->
