@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:linear-gradient(
+            to right,#014784,#6e04df);
+            margin:0;
+            padding:40px;
+            text-align:center;
+        }
+
+        h1{
+            color:white;
+        }
+
+        .container{
+            width:850px;
+            margin:auto;
+            margin-top:80px;
+        }
+
+        /* Upload Box */
+        .upload-box{
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            margin-bottom:30px;
+            box-shadow:0px 5px 20px
+            rgba(0,0,0,0.3);
+        }
+
+        input[type="file"]{
+            padding:10px;
+        }
+
+        button{
+            padding:12px 25px;
+            background:#014784;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#002f5e;
+        }
+
+        /* Result Box */
+        .result-box{
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0px 5px 20px
+            rgba(0,0,0,0.3);
+        }
+
+        .result-image img{
+            width:500px;
+            border-radius:15px;
+            border:3px solid #ddd;
+            margin-top:20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Object Detection System</h1>
+
+<div class="container">
+
+    <!-- Upload Section -->
+    <div class="upload-box">
+
+        <h2>
+            Upload Image for Detection
+        </h2>
+
+        <form action="/detect"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <input type="file"
+                   name="image"
+                   required>
+
+            <br><br>
+
+            <button type="submit">
+                Detect Objects
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Result Section -->
+    {% if image %}
+
+    <div class="result-box">
+
+        <h2>
+            Detection Result
+        </h2>
+
+        <div class="result-image">
+
+            <img src="{{ url_for(
+            'static',
+            filename=image
+            ) }}">
+
+        </div>
+
+        <br>
+
+        <a href="/dashboard">
+
+            <button>
+                View Dashboard
+            </button>
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

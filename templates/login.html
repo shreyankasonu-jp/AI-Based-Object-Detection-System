@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://tse4.mm.bing.net/th/id/OIP.vUo3vrla2txarPe0hKiBcAHaEK?pid=Api&P=0&h=180');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height:100vh;
+        }
+
+        /* ---------- NAVBAR ---------- */
+
+        .navbar{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            background:white;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            padding:15px 40px;
+            box-shadow:0px 4px 15px rgba(0,0,0,0.2);
+
+            z-index:1000;
+            box-sizing:border-box;
+        }
+
+        .logo{
+            color:#014784;
+            margin:0;
+            font-size:28px;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:25px;
+            margin-right:40px;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:#014784;
+            font-size:18px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#6e04df;
+        }
+
+        /* ---------- LOGIN BOX ---------- */
+
+        .box{
+            background:rgba(255,255,255,0.9);
+            padding:40px;
+            border-radius:20px;
+            width:350px;
+            text-align:center;
+            box-shadow:0px 5px 20px rgba(0,0,0,0.3);
+
+            position:absolute;
+            top:55%;
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
+
+        h2{
+            color:#014784;
+            margin-bottom:20px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border-radius:8px;
+            border:1px solid #ccc;
+            box-sizing:border-box;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#014784;
+            border:none;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#002f5e;
+        }
+
+        #error{
+            color:red;
+            margin-top:15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+
+        <h2 class="logo">
+            AI Object Detection
+        </h2>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="/signup">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Login Box -->
+
+    <div class="box">
+
+        <h2>
+            Object Detection Login
+        </h2>
+
+        <form onsubmit="return validateLogin()">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <br><br>
+
+            <button type="submit">
+                Login
+            </button>
+
+            <p id="error"></p>
+
+        </form>
+
+    </div>
+
+
+    <!-- Login Validation -->
+
+    <script>
+
+        function validateLogin(){
+
+            let correctUsername = "admin";
+            let correctPassword = "1234";
+
+            let username =
+            document.getElementById(
+                "username"
+            ).value;
+
+            let password =
+            document.getElementById(
+                "password"
+            ).value;
+
+            if(
+                username === correctUsername &&
+                password === correctPassword
+            ){
+
+                window.location.href =
+                "/upload";
+
+                return false;
+            }
+
+            else{
+
+                document.getElementById(
+                    "error"
+                ).innerHTML =
+                "Invalid Username or Password";
+
+                return false;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

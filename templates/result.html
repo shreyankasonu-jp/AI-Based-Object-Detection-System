@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f4f4f4;
+            text-align:center;
+        }
+
+        .stats{
+            width:400px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.2);
+            margin-top:20px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        td{
+            padding:12px;
+            border:1px solid #ddd;
+            font-size:18px;
+        }
+
+        img{
+            margin-top:20px;
+            width:700px;
+            border-radius:10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h2>Detected Objects</h2>
+
+{% for obj, count in detected_objects.items() %}
+<p>{{ obj }} : {{ count }}</p>
+{% endfor %}
+
+<h3>Total Objects:
+{{ total_objects }}</h3>
+
+<h3>Highest Confidence:
+{{ confidence }}%</h3>
+
+<h3>Total Uploaded Images:
+{{ image_count }}</h3>
+
+<img src="{{ url_for('static',
+filename=image) }}"
+width="500">
+
+</body>
+</html>
