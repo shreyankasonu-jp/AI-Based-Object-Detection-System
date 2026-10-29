@@ -397,3 +397,9 @@ def dashboard():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    conn = sqlite3.connect('detections.db')
+print("Tables:", conn.execute(
+    "SELECT name FROM sqlite_master WHERE type='table'"
+).fetchall())
+conn.close()
